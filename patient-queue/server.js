@@ -9,6 +9,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+
 console.log("Dependencies loaded");
 
 // Initialize Express app and server
@@ -35,6 +36,7 @@ console.log("Middleware applied");
 
 // Routes
 app.use('/api/patients', require('./route/patientsRoute'));
+app.use('/api/queue', require('./routes/queueRoutes'));
 
 console.log("Routes loaded");
 

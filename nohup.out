@@ -8,3 +8,16 @@ INFO:werkzeug: * Restarting with watchdog (fsevents)
 INFO:root:Model loaded successfully.
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 930-968-047
+Traceback (most recent call last):
+  File "/Users/harishk/Documents/GitHub/HealthCare/app.py", line 42, in <module>
+    except Exception as e:
+    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.12/site-packages/flask/app.py", line 625, in run
+    run_simple(t.cast(str, host), port, self, **options)
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/serving.py", line 1106, in run_simple
+    run_with_reloader(
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/_reloader.py", line 448, in run_with_reloader
+    ensure_echo_on()
+  File "/opt/anaconda3/lib/python3.12/site-packages/werkzeug/_reloader.py", line 428, in ensure_echo_on
+    termios.tcsetattr(sys.stdin, termios.TCSANOW, attributes)
+termios.error: (4, 'Interrupted system call')

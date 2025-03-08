@@ -44,4 +44,4 @@ def predict_wait_time():
         return jsonify({'error': str(e)}), 400
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)  # Running on port 5002
+    app.run(debug=True, port=1234)  # Running on port 5002
