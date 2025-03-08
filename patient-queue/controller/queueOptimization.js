@@ -6,6 +6,7 @@ const router = express.Router();
 const axios = require('axios');
 const twilio = require('twilio');
 const sendNotification = require('../services/twilioService');
+const Patient = require('../models/Patients');
 
 require('dotenv').config();
 
@@ -23,7 +24,7 @@ const PatientSchema = new mongoose.Schema({
     status: { type: String, default: 'waiting' }, // waiting, in-progress, completed
     checkInTime: { type: Date, default: Date.now }
 });
-const Patient = mongoose.model('Patient', PatientSchema);
+//const Patient = mongoose.model('Patient', PatientSchema);
 
 // Doctor Schema to Track Availability
 const DoctorSchema = new mongoose.Schema({
@@ -34,18 +35,6 @@ const DoctorSchema = new mongoose.Schema({
 });
 const Doctor = mongoose.model('Doctor', DoctorSchema);
 
-// Function to Send SMS Notification
-const sendNotification = async (phone, message) => {
-    try {
-        await client.messages.create({
-            body: message,
-            from: TWILIO_PHONE,
-            to: phone
-        });
-    } catch (error) {
-        console.error('Twilio SMS Error:', error);
-    }
-};
 
 // Function to Optimize Queue and Notify Patients
 const optimizeQueue = async () => {

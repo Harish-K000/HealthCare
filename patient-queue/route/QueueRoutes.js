@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const queueOptimization = require('../controllers/queueOptimization');
+const queueOptimization = require('../controller/queueOptimization');
 
 router.get('/queue', queueOptimization);
 

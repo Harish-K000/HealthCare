@@ -36,7 +36,7 @@ console.log("Middleware applied");
 
 // Routes
 app.use('/api/patients', require('./route/patientsRoute'));
-app.use('/api/queue', require('./routes/queueRoutes'));
+app.use('/api/queue', require('./route/QueueRoutes'));
 
 console.log("Routes loaded");
 
